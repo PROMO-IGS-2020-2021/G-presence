@@ -1,3 +1,4 @@
+<?php  include('Config/connexion.php');?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +15,7 @@
 <body>
         <?php include_once('views/includes/navbar.php');?>
         <div class="container">
-        <form action="" method="post" id="form-presence" on>
+        <form action="app/Functions/traitementPresence.php" method="post" id="form-presence" onsubmit="return validerPresence();">
             <div class="row">
             
                 <div class="col-md-6 mt-5">
@@ -27,7 +28,7 @@
                         <p class="text-center">(Marquer votre présence d'aujourd'hui)</p>
                             <div class="form-group">
                                 <input type="email" name="email" class="form-control" id="email" placeholder="Adresse Email">
-                                <span id="erreur-email"></span>
+                                <span id="erreur-email" class="text-danger"></span>
                             </div>
                     </div>
                     <div class="col-lg-12">
