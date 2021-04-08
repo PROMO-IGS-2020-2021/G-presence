@@ -21,11 +21,11 @@ Paramètres        </a>
 Apprenants        </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="participants.php">Ajouter</a>
-          <a class="dropdown-item" href="liste-presence.php">Liste</a>
+          <a class="dropdown-item" href="#">Liste</a>
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Presences</a>
+        <a class="nav-link" href="liste-presence.php">Presences</a>
       </li>
     </ul>
   </div>

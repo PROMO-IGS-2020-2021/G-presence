@@ -15,6 +15,32 @@
         } elseif(!filter_var($email,FILTER_VALIDATE_EMAIL)){
             echo "<script>alert('adresse mail non valide')</script>";
             //echo "<script>window.location.href='../../admin/index.php';</script>";    
-           }
+        }
+           elseif(!filter_var($tel,FILTER_SANITIZE_NUMBER_INT)){
+            echo "<script>alert('Votre numéro de téléphone est valide')</script>";
+            //echo "<script>window.location.href='../../admin/index.php';</script>";    
+        }
+        
+        elseif(strlen($tel)<10){
+            echo "<script>alert('Votre numéro de téléphone doit être au format 10 chiffres')</script>";
+            //echo "<script>window.location.href='../../admin/index.php';</script>";    
+        }else{
+            $date_inscription=date("Y-m-d h:i:s");
+            $sql= "INSERT INTO apprenants(nom,prenoms,email,telephone,sexe,lieu_habitation,date_inscription) VALUES (:nom,:prenoms,:email,:telephone,:sexe,:lieu_habitation,:date_inscription)";
+            $query=$bd->prepare($sql);
+            
+            $query->bindValue(":nom",$nom);
+            $query->bindValue(":prenoms",$prenoms);
+            $query->bindValue(":email",$email);
+            $query->bindValue(":telephone",$tel);
+            $query->bindValue(":sexe",$sexe);
+            $query->bindValue(":lieu_habitation",$habitation);
+            $query->bindValue(":date_inscription",$date_inscription);
+            $query->execute();
+             
+            echo "<script>alert('Donnée enregistré avec succes')</script>";
+            echo "<script>window.location.href='participants.php';</script>";    
+
+        }
     }
 ?>

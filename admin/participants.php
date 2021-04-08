@@ -23,7 +23,7 @@
         <h3 class="text-center mb-5">FORMULAIRE D'AJOUT DES APPRENANTS</h3>
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
-                <form action="traitementApprenants.php" method="POST">
+                <form action="traitementApprenants.php" method="POST" onsubmit="return validerAjoutApprenants();">
                     <div class="form-group">
                             <input class="form-control" type="text" name="nom" placeholder="nom">
                             <span class="text-danger" id="erreurnom"></span>
