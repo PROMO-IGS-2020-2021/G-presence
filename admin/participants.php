@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,33 +23,33 @@
         <h3 class="text-center mb-5">FORMULAIRE D'AJOUT DES APPRENANTS</h3>
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
-                <form action="#" method="POST" onsubmit="return validerAjoutApprenants();">
+                <form action="traitementApprenants.php" method="POST">
                     <div class="form-group">
                             <input class="form-control" type="text" name="nom" placeholder="nom">
-                            <span id="erreurnom"></span>
+                            <span class="text-danger" id="erreurnom"></span>
                     </div>
                     <div class="form-group">
                             <input class="form-control" type="text" name="prenoms" placeholder="prenoms">
-                            <span id="erreurprenoms"></span>
+                            <span class="text-danger" id="erreurprenoms"></span>
                     </div>
                     <div class="form-group">
-                            <input class="form-control" type="email" name="email" placeholder="email">
-                            <span id="erreurmail"></span>
+                            <input class="form-control" type="text" name="email" placeholder="email">
+                            <span class="text-danger" id="erreurmail"></span>
                     </div>
                     <div class="form-group">
                             <input class="form-control" type="tel" name="tel" placeholder="numéro de téléphone">
-                            <span id="erreurtel"></span>
+                            <span class="text-danger" id="erreurtel"></span>
                     </div>
                     <div class="form-group">Sexe :
-                            <input type="radio" name="sexe"> Homme
-                            <input type="radio" name="sexe"> Femme <br>
-                            <span id="erreursexe"></span>
+                            <input type="radio" name="sexe" value="H" checked> Homme
+                            <input type="radio" name="sexe" Value="F"> Femme <br>
+                            <span class="text-danger" id="erreursexe"></span>
                     </div>
                     <div class="form-group">
                             <input class="form-control" type="text" name="habitation" placeholder="Lieu d'habitation">
-                            <span id="erreurhabitation"></span>
+                            <span class="text-danger" id="erreurhabitation"></span>
                     </div>
-                    <button class="btn btn-primary btn-block mb-5" type="submit">Envoyer</button>
+                    <button class="btn btn-primary btn-block mb-5" name="AjoutApprenants" type="submit">Envoyer</button>
                 </form>
                 </div>
             </div>

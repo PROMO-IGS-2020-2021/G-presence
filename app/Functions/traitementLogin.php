@@ -8,16 +8,15 @@
         echo "<script>alert('adresse mail et mot de passe sont requis')</script>";
         echo "<script>window.location.href='../../admin/index.php';</script>";
         
- }elseif(strlen($email)<6){
+   } elseif(strlen($email)<6){
     echo "<script>alert('adresse mail doit contenir au moins 6 caracteres')</script>";
     //echo "<script>window.location.href='../../admin/index.php';</script>";
     
- }
- elseif(filter_var(!$email,FILTER_VALIDATE_EMAIL)){
+   } elseif(!filter_var($email,FILTER_VALIDATE_EMAIL)){
     echo "<script>alert('adresse mail non valide')</script>";
     //echo "<script>window.location.href='../../admin/index.php';</script>";
     
- }
+   }
     $password_crypter=password_hash($password,PASSWORD_BCRYPT);
     //var_dump($password,$password_crypter);
     //die();
