@@ -20,7 +20,7 @@ Paramètres        </a>
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 Apprenants        </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Ajouter</a>
+          <a class="dropdown-item" href="participants.php">Ajouter</a>
           <a class="dropdown-item" href="liste-presence.php">Liste</a>
         </div>
       </li>

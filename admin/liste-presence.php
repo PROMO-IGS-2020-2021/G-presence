@@ -16,6 +16,9 @@
 <body>
 <?php
 session_start();
+if(!isset($_SESSION["id"])){
+    header("Location:index.php");
+}
 include "navbar.php";
 ?>
 <div class="container">
@@ -34,7 +37,7 @@ include "navbar.php";
                 </thead>
                 <tbody>
                 <?php 
-                $sql="SELECT apprenants.nom, apprenants.prenoms, presence.statut, presence.date_jour FROM apprenants INNER JOIN presence ON apprenants.id=presence.id_apprenant";
+                $sql="SELECT apprenants.nom, apprenants.prenoms, presence.statut, apprenants.id, presence.date_jour FROM apprenants INNER JOIN presence ON apprenants.id=presence.id_apprenant";
                     $query=$bd->prepare($sql);
                     $query->execute();
                     $data=$query->fetchAll();
@@ -47,9 +50,7 @@ include "navbar.php";
                             <td><?php echo $value["date_jour"];?></td>
                             <td><?php echo $value["statut"];?></td>
                             <td class="text-center">
-                                <a href="#"><i class="fa fa-edit fa-2x"></i></a>
-                                <a href="#"><i class="fa fa-trash fa-2x"></i></a>
-
+                                <a onclick=" return confirm('Voulez-vous supprimer cette presence ?');" href="delete.php?id=<?php echo $value["id"]; ?>"><i class="fa fa-trash fa-2x"></i></a>
                             </td>
                         </tr>
                     <?php 
@@ -60,6 +61,22 @@ include "navbar.php";
         </div>
     </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <?php
 include "../views/includes/footer.php";
 ?>
