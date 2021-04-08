@@ -36,7 +36,8 @@
         //echo "<script>alert('votre adresse est incorrecte ')</script>";
        // echo "<script>window.location.href='../../admin/index.php';</script>"; 
         if(!password_verify($password,$data["password"])){
-            echo"<script>alert('votre  mot de passe est incorrecte ')</script>";;
+            echo"<script>alert('votre  mot de passe est incorrecte ')</script>";
+            echo "<script>window.location.href='../../admin/index.php';</script>";
         }else{
          session_start();
          $_SESSION["id"]=$data["id"];
