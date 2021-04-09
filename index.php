@@ -14,34 +14,49 @@
 </head>
 <body>
         <?php include_once('views/includes/navbar.php');?>
-        <div class="container">
-        <form action="app/Functions/traitementPresence.php" method="post" id="form-presence" onsubmit="return validerPresence();">
-            <div class="row">
-            
-                <div class="col-md-6 mt-5">
-                    <img src="public/assets/images/login.png" alt="login" class="loginImage">
-                </div>
-                <div class="col-md-6 mt-5">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h4 class="form-title text-center">PRÉSENCE</h4>
-                        <p class="text-center">(Marquer votre présence d'aujourd'hui)</p>
-                            <div class="form-group">
-                                <input type="email" name="email" class="form-control" id="email" placeholder="Adresse Email">
-                                <span id="erreur-email" class="text-danger"></span>
+        <?php 
+            $date = date("Y-m-d");
+            $date_jour = strtotime(date("Y-m-d h:i:s"));
+            $date_start = strtotime($date.""."8:30");
+            $date_end = strtotime($date.""."17:30");
+            if($date_jour < $date_end){
+               ?>
+                    <div class="container">
+                        <form action="app/Functions/traitementPresence.php" method="post" id="form-presence" onsubmit="return validerPresence();">
+                            <div class="row">
+                            
+                                <div class="col-md-6 mt-5">
+                                    <img src="public/assets/images/login.png" alt="login" class="loginImage">
+                                </div>
+                                <div class="col-md-6 mt-5">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <h4 class="form-title text-center">PRÉSENCE</h4>
+                                        <p class="text-center">(Marquer votre présence d'aujourd'hui)</p>
+                                            <div class="form-group">
+                                                <input type="email" name="email" class="form-control" id="email" placeholder="Adresse Email">
+                                                <span id="erreur-email" class="text-danger"></span>
+                                            </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <button type="submit" name="inscription" class="btn btn-primary btn-block" >Valider</button>
+                                    </div>
+                                    
+                                </div>
+                                    
+                                    
+                                </div>
                             </div>
-                    </div>
-                    <div class="col-lg-12">
-                        <button type="submit" name="inscription" class="btn btn-primary btn-block" >Valider</button>
-                    </div>
-                    
-                </div>
-                    
-                    
-                </div>
-            </div>
-            </form>
-        </div>
+                            </form>
+                        </div>
+               <?php
+            }else{
+                echo "<div class='text-danger text-center'>VOUS ETES ABSENT AUJOURD'HUI, PRIERE REVENIR DEMAIN A 8 H 30</div>";
+            }
+            
+
+        ?>
+     
         
 <?php include_once('views/includes/footer.php');?>
 <script type="text/javascript" src="public/assets/js/main.js"></script>
