@@ -10,22 +10,22 @@
     <ul class="navbar-nav ml-auto">
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-Paramètres        </a>
+        <i class="fa fa-cog"></i> Paramètres</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#"><?php if(isset($_SESSION["id"])){echo $_SESSION["nom"]." ". $_SESSION["prenoms"];}?></a>
-          <a class="dropdown-item" href="logout.php">Déconnexion</a>
+          <a class="dropdown-item" href="#"><i class="fa fa-user"></i>  <?php if(isset($_SESSION["id"])){echo $_SESSION["nom"]." ". $_SESSION["prenoms"];}?></a>
+          <a class="dropdown-item" href="logout.php"><i class="fa fa-power-off"></i> Déconnexion</a>
         </div>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-Apprenants        </a>
+        <i class="fa fa-user"></i>  Apprenants</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="participants.php">Ajouter</a>
-          <a class="dropdown-item" href="#">Liste</a>
+          <a class="dropdown-item" href="participants.php"><i class="fa fa-user-plus"></i>  Ajouter</a>
+          <a class="dropdown-item" href="#"><i class="fa fa-list"></i> Liste</a>
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="liste-presence.php">Presences</a>
+        <a class="nav-link" href="liste-presence.php"><i class="fa fa-list"></i> Presences</a>
       </li>
     </ul>
   </div>
