@@ -1,6 +1,6 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#"><img src="../public/assets/images/logo-igs2.png" alt="" class="logo-igs"></a>
+  <a class="navbar-brand" href="dashboard.php"><img src="../public/assets/images/logo-igs2.png" alt="" class="logo-igs"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -8,6 +8,9 @@
  ?>
 <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+        <a class="nav-link" href="dashboard.php"><i class="fa fa-home"></i>Dashboard</a>
+      </li>
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i class="fa fa-cog"></i> Paramètres</a>
@@ -21,7 +24,7 @@
         <i class="fa fa-user"></i>  Apprenants</a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="participants.php"><i class="fa fa-user-plus"></i>  Ajouter</a>
-          <a class="dropdown-item" href="#"><i class="fa fa-list"></i> Liste</a>
+          <a class="dropdown-item" href="liste-apprenant.php"><i class="fa fa-list"></i> Liste</a>
         </div>
       </li>
       <li class="nav-item">
